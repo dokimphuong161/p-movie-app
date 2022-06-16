@@ -2,11 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;900&display=swap');
 
 :root {
-    $primary: #24baef;
+    --primary: #24baef;
+    --bg-light: #fff;
+    --bg-dark: #131722;
+
+    //Default Layout
+    --default-layout-header-height: 82px;
+    --default-layout-width: 1170px;
 }
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -19,4 +27,8 @@ body {
     font-size: 1.6rem;
     line-height: 1.4rem;
     text-rendering: optimizeSpeed;
+}
+
+.container {
+    width: var(--default-layout-width);
 }

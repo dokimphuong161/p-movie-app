@@ -16,11 +16,11 @@ const publicRoutes = [
     {
         path: '/:category/:id',
         component: Detail,
-        layout: GridLayout,
     },
     {
         path: '/:category/search/:id',
         component: Catalog,
+        layout: GridLayout,
     },
 ];
 

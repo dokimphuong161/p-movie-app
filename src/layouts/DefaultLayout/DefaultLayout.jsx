@@ -1,12 +1,17 @@
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import className from 'classnames/bind';
+import styles from './DefaultLayout.module.scss';
 
 const DefaultLayout = (props) => {
+    const cx = className.bind(styles);
     return (
         <div>
-            <Header />
-            <div className="content">{props.children}</div>
-            <Footer />
+            <div className={cx('wrapper')}>
+                <Header />
+                <div className={cx('content')}>{props.children}</div>
+                <Footer />
+            </div>
         </div>
     );
 };
