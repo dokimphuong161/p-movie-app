@@ -1,12 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Catalog from './pages/Catalog';
-import Detail from './pages/Detail';
 
+import { Fragment } from 'react';
 import { publicRoutes } from '~/configs/RouterConfig';
 import { DefaultLayout } from './layouts/Layouts';
-import { GridLayout } from './layouts/Layouts';
-import { Fragment } from 'react';
 
 function App() {
     return (

@@ -29,6 +29,14 @@ body {
     text-rendering: optimizeSpeed;
 }
 
+//Reset CSS
+
+a {
+    text-decoration: none;
+}
+
+// Common
+
 .container {
     width: var(--default-layout-width);
 }
