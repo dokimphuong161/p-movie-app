@@ -1,0 +1,34 @@
+//Suggest
+.search-title {
+    height: 30px;
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
+}
+.suggest-list {
+    .suggest-item {
+        display: flex;
+        align-items: center;
+        padding: 9px 16px;
+    }
+
+    .suggest-item:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+    .suggest-icon {
+        margin-right: 8px;
+        color: rgba(22, 24, 35, 0.7);
+        font-size: 2rem;
+    }
+
+    .suggest-tag {
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 500;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

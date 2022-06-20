@@ -11,7 +11,6 @@ const publicRoutes = [
     {
         path: '/:category',
         component: Catalog,
-        layout: null,
     },
     {
         path: '/:category/:id',
