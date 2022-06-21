@@ -6,15 +6,17 @@ import 'tippy.js/dist/tippy.css';
 import styles from './Header.module.scss';
 
 import { AiOutlineMenu } from 'react-icons/ai';
-import { BiSearchAlt, BiRegistered } from 'react-icons/bi';
+import { BiRegistered, BiSearchAlt } from 'react-icons/bi';
 import { FaUserCircle } from 'react-icons/fa';
 import { ImSpinner } from 'react-icons/im';
-import { MdClear, MdLanguage, MdOutlineLogin } from 'react-icons/md';
+import { MdClear, MdLanguage, MdOutlineLogin, MdOutlineLogout } from 'react-icons/md';
+import { CgProfile } from 'react-icons/cg';
+import { IoExitOutline } from 'react-icons/io5';
 
 import { Link, useLocation } from 'react-router-dom';
+import Menu from '~/components/Menu';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import SearchResult from '~/components/SearchResult';
-import Menu from '~/components/Menu';
 
 const cx = classNames.bind(styles);
 
@@ -25,14 +27,32 @@ const HEADER_NAVBAR = [
     { display: 'Wishlists', path: '/wishlist' },
 ];
 
+const currentUser = true;
+
 const MENU_ITEMS = [
     {
         icon: <MdLanguage />,
         title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Vietnamese',
+                },
+            ],
+        },
     },
     {
         icon: <MdOutlineLogin />,
         title: 'Sign In',
+        to: '/',
     },
     {
         icon: <BiRegistered />,
@@ -40,14 +60,28 @@ const MENU_ITEMS = [
     },
 ];
 
+const userMenu = [
+    {
+        icon: <CgProfile />,
+        title: 'View Profile',
+    },
+
+    ...MENU_ITEMS,
+    {
+        icon: <MdOutlineLogout />,
+        title: 'Log out',
+        separate: true,
+    },
+];
+
+console.log(userMenu);
+
 const Header = () => {
     //State for click on menu icon
     const [clicked, setClicked] = useState(false);
     const handleClick = () => {
         setClicked(!clicked);
     };
-
-    console.log(clicked);
     //State for Search
     const [searchResult, setSearchResult] = useState([]);
 
@@ -65,6 +99,11 @@ const Header = () => {
     const searchRef = useRef(null);
     const handleShowSearchMobile = () => {
         searchRef.current.classList.toggle(cx('show-search'));
+    };
+
+    //Handle on menu item
+    const handleMenuSelect = (menuItem) => {
+        console.log(menuItem);
     };
 
     return (
@@ -132,12 +171,19 @@ const Header = () => {
                             </button>
                         </div>
 
-                        <Menu items={MENU_ITEMS}>
-                            <div className={cx('login')}>
-                                <button className={cx('login-btn')}>
-                                    <FaUserCircle />
-                                </button>
-                            </div>
+                        <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuSelect}>
+                            {currentUser ? (
+                                <img
+                                    className={cx('user-avatar')}
+                                    src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/fac92301a36c2275c99f393061ef04ca~c5_100x100.jpeg?x-expires=1655985600&x-signature=T3WLn8KFvZpQHHMz08WtN3vYhgs%3D"
+                                />
+                            ) : (
+                                <div className={cx('login')}>
+                                    <button className={cx('login-btn')}>
+                                        <FaUserCircle />
+                                    </button>
+                                </div>
+                            )}
                         </Menu>
                     </div>
                 </div>
