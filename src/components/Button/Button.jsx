@@ -15,6 +15,7 @@ const Button = ({
     blur = false,
     circle = false,
     text = false,
+    top = false,
     leftIcon,
     rightIcon,
     className,
@@ -49,6 +50,7 @@ const Button = ({
         outline,
         small,
         disable,
+        top,
         blur,
         circle,
     });
