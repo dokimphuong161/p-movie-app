@@ -37,7 +37,7 @@ const tmdbApi = {
         const url = 'search/' + category[cate];
         return axiosClient.get(url, params);
     },
-    searchNulti: (params) => {
+    searchMulti: (params) => {
         const url = 'search/multi';
         return axiosClient.get(url, params);
     },

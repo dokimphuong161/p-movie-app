@@ -8,6 +8,7 @@
     justify-content: center;
     box-shadow: var(--box-shadow);
     background-color: var(--white);
+    height: var(--header-height);
 }
 .inner {
     justify-content: space-between;
@@ -34,11 +35,11 @@
     margin-left: 12px;
 
     li {
-        padding: 31px 16px;
+        padding: 28px 16px;
     }
 
     .active a {
-        color: #1773d6;
+        color: #ee540c;
     }
 }
 

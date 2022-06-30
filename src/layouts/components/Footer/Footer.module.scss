@@ -75,6 +75,6 @@
 //Responsive
 @media (max-width: 739px) {
     .footer-top {
-        display: none;
+        display: none !important;
     }
 }

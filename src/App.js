@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Fragment } from 'react';
 import { publicRoutes } from '~/configs/RouterConfig';
 import { DefaultLayout } from './layouts/Layouts';
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
 
 function App() {
     return (

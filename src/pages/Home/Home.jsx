@@ -1,5 +1,10 @@
+import HeroSlide from './HeroSlide';
 const Home = () => {
-    return <div></div>;
+    return (
+        <>
+            <HeroSlide />
+        </>
+    );
 };
 
 Home.propTypes = {};

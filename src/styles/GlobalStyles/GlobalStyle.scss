@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;900&display=swap');
 
 :root {
-    --primary: #24baef;
+    --primary: #ee540c;
     --bg-light: #fff;
     --bg-dark: #131722;
     --box-shadow: 0 0 8px rgb(51 51 51 / 30%);
@@ -16,6 +16,7 @@
 
     //Default Layout
     --default-layout-width: 1170px;
+    --header-height: 70px;
 }
 
 * {
@@ -33,7 +34,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 1.6rem;
     line-height: 1.4rem;
-    text-rendering: optimizeSpeed;
+    // text-rendering: optimizeSpeed;
     color: var(--text-color);
 }
 
@@ -51,7 +52,8 @@ li {
 
 button,
 input,
-[tabindex] {
+[tabindex],
+iframe {
     outline: none;
     border: none;
     background-color: transparent;
@@ -63,3 +65,59 @@ input {
 }
 
 // Common
+.container {
+    max-width: 1660px;
+}
+
+//Swiper
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--white);
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+
+    border: 1px solid var(--white);
+    border-radius: 50px;
+}
+
+.swiper-button-next {
+    padding: 0 1.2rem 0 1.4rem;
+    right: 25px;
+}
+.swiper-button-prev {
+    padding: 0 1.4rem 0 1.2rem;
+    left: 25px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 1.6rem;
+}
+
+//Modal
+
+.modal-active {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+    padding: 2rem;
+    background-color: #0f0f0f;
+    width: 50%;
+    // opacity: 0;
+    // transform: translateY(-250px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative;
+    color: white;
+
+    &-close {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        font-size: 2rem;
+        line-height: 0;
+        cursor: pointer;
+    }
+}
